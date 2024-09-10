@@ -5,9 +5,10 @@ After completing the course, student is familiar of design and implementation of
 
 ## TOPICS:
 
-### Intro to Operating Systems
+### Intro to Operating Systems & C
+- Operating Systems
 - C Primer
-- 
+  
 ### Process and Execution
 - Processes
 - Process API
@@ -62,7 +63,17 @@ After completing the course, student is familiar of design and implementation of
 - Redundant Disk Arrays (RAID)
   
 ### File Systems
-
+- Files & Directories
+- Fast File System (FFS)
+- File System Implementation
+  
 ### Data Integrity & Protection
+- FSCK and Journaling
+- Log-structured File System
+- Flash-based SSDs
 
 ### Distributed Systems
+- Distributed Systems
+- Data Integrity and Protectio
+- Network File System (NFS)
+- Andrew File System (AFS)
