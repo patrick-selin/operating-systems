@@ -35,3 +35,22 @@ void *MyMalloc(size_t noOfBytes){
   curr=curr->next;
   printf("One block checked\n");
  }
+
+if((curr->size)==noOfBytes){
+  curr->free=0;
+  result=(void*)(++curr);
+  printf("Exact fitting block allocated\n");
+  return result;
+ }
+ else if((curr->size)>(noOfBytes+sizeof(struct block))){
+  split(curr,noOfBytes);
+  result=(void*)(++curr);
+  printf("Fitting block allocated with a split\n");
+  return result;
+ }
+ else{
+  result=NULL;
+  printf("Sorry. No sufficient memory to allocate\n");
+  return result;
+ }
+}
