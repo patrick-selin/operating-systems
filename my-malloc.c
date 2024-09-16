@@ -54,3 +54,17 @@ if((curr->size)==noOfBytes){
   return result;
  }
 }
+
+void merge(){
+ struct block *curr,*prev;
+ curr=freeList;
+ 
+ while((curr->next)!=NULL){
+  if((curr->free) && (curr->next->free)){
+   curr->size+=(curr->next->size)+sizeof(struct block);
+   curr->next=curr->next->next;
+  }
+  prev=curr;
+  curr=curr->next;
+ }
+}
