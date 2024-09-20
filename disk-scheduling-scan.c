@@ -27,5 +27,26 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < 10; i++) {
     scanf("%d", &disk_locations[i]);
 
-  }
-  printf("\n");
+}
+printf("\n");
+sort(disk_locations, n);
+
+for (int i = 0; i < n; i++) {
+    if (disk_locations[i] <= head) {
+        printf("Sector %d\n", disk_locations[i]);
+        total_movement += abs(disk_locations[i] - head);
+        head = disk_locations[i];
+    }
+}
+
+for (int i = 0; i < n; i++) {
+    if (disk_locations[i] > head) {
+        printf("Sector %d\n", disk_locations[i]);
+        total_movement += abs(disk_locations[i] - head);
+        head = disk_locations[i];
+    }
+}
+printf("Total Disk Head Movement: %d\n", total_movement);
+
+return 0;
+}
