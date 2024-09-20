@@ -17,3 +17,15 @@ void sort(int arr[], int n) {
     }
 }
 
+int main(int argc, char *argv[]) {
+  int disk_locations[10];
+  int n = 10;
+  int head = 10;
+  int total_movement = 0;
+
+  printf("Enter disk locations to service: \n");
+  for (int i = 0; i < 10; i++) {
+    scanf("%d", &disk_locations[i]);
+
+  }
+  printf("\n");
