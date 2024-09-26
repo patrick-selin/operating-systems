@@ -36,6 +36,16 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
+    int len, n;
+    len = sizeof(cliaddr);  // Length of client address
+
+    n = recvfrom(sockfd, (char *)buffer, MAXLINE, MSG_WAITALL, (struct sockaddr *)&cliaddr, &len);
+    buffer[n] = '\0';
+    printf("Client Says: %s\n", buffer);
+
+    sendto(sockfd, (const char *)response, strlen(response), MSG_CONFIRM, (const struct sockaddr *)&cliaddr, len);
+    printf("Response sent.\n");
+
     close(sockfd);
     return 0;
 }
